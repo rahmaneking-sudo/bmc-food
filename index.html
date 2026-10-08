@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMC Food | Tacos à Point E, Dakar</title>
+  <meta name="description" content="BMC Food, tacos pressés, grillés et gratinés à Cité Mixta, IDA (Point E), Dakar. Découvrez la carte et entrez dans la cuisine.">
+  <meta name="theme-color" content="#0b0a08">
+  <link rel="icon" href="assets/img/logo-bmc-food.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/scenes/facade.webp">
+  <link rel="preload" as="image" href="assets/img/scenes/facade-fg.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#carte">Aller à la carte</a>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo"><img src="assets/img/logo-bmc-food.png" alt=""></div>
+    <div class="loader__bar"><span></span></div>
+    <p class="loader__hint">La cuisine s'allume…</p>
+  </div>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="BMC Food, retour en haut">
+      <span class="nav__logo"><img src="assets/img/logo-bmc-food.png" alt="Logo BMC Food"></span>
+      <span class="nav__word">BMC <em>Food</em></span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#visite">La visite</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#carte">La carte</a>
+      <a href="#infos">Infos</a>
+    </nav>
+    <a class="btn btn--amber btn--sm nav__cta" href="#carte">Voir la carte</a>
+  </header>
+
+  <main id="top">
+    <!-- Visite : scène fixe pilotée par le défilement -->
+    <section id="visite" class="flight" aria-label="Visite de BMC Food">
+      <div class="flight__stage">
+        <canvas class="flight__canvas" aria-hidden="true"></canvas>
+        <div class="flight__shade" aria-hidden="true"></div>
+        <div class="flight__chapters" data-chapters></div>
+
+        <div class="hud" aria-hidden="true">
+          <div class="hud__row">
+            <span class="hud__index" data-hud-index>01</span>
+            <span class="hud__label" data-hud-label>Arrivée</span>
+            <span class="hud__time" data-hud-time>00:00</span>
+          </div>
+          <div class="hud__track"><span data-hud-bar></span></div>
+        </div>
+        <a class="flight__skip" href="#savoir-faire">Passer la visite <span aria-hidden="true">↓</span></a>
+        <p class="flight__placeholder" data-placeholder hidden>Aperçu provisoire : la vidéo de la visite arrive bientôt</p>
+      </div>
+    </section>
+
+    <!-- Version allégée (mobile, mouvement réduit) : un chapitre = une image fixe -->
+    <section id="visite-lite" class="lite" aria-label="Visite de BMC Food en images" hidden>
+      <div data-lite></div>
+    </section>
+
+    <section id="savoir-faire" class="craft" data-theme="dark">
+      <div class="marquee" aria-hidden="true"><div class="marquee__track" data-marquee></div></div>
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Savoir-faire</p>
+          <h2 class="h2">Trois gestes,<br><em>un seul</em> tacos.</h2>
+        </header>
+        <ol class="craft__list" data-craft></ol>
+      </div>
+    </section>
+
+    <section id="carte" class="menu" data-theme="light">
+      <div class="wrap menu__grid">
+        <aside class="menu__aside">
+          <p class="eyebrow">La carte</p>
+          <h2 class="h2">Choisissez<br>votre <em>faim</em>.</h2>
+          <p class="menu__lead">Prix en francs CFA, tels qu'affichés sur la carte BMC Food.</p>
+          <div class="chips" role="group" aria-label="Filtrer la carte" data-filters>
+            <button class="chip is-on" data-filter="all" aria-pressed="true">Tout</button>
+            <button class="chip" data-filter="mixte" aria-pressed="false">Mixte</button>
+            <button class="chip" data-filter="viande" aria-pressed="false">Viande</button>
+            <button class="chip" data-filter="poulet" aria-pressed="false">Poulet</button>
+            <button class="chip" data-filter="giga" aria-pressed="false">Giga &amp; XL</button>
+            <button class="chip" data-filter="gratine" aria-pressed="false">Gratinés</button>
+          </div>
+          <p class="menu__count" aria-live="polite" data-count></p>
+        </aside>
+        <div class="menu__cats" data-menu></div>
+      </div>
+    </section>
+
+    <section id="infos" class="infos" data-theme="dark">
+      <div class="wrap">
+        <p class="eyebrow reveal">Infos pratiques</p>
+        <h2 class="infos__address reveal" data-address></h2>
+        <div class="infos__grid reveal">
+          <div>
+            <h3 class="infos__k">Adresse</h3>
+            <p class="infos__v" data-address-line></p>
+          </div>
+          <div data-phones-block>
+            <h3 class="infos__k">Téléphone</h3>
+            <ul class="infos__v infos__phones" data-phones></ul>
+          </div>
+          <div>
+            <h3 class="infos__k">Horaires</h3>
+            <p class="infos__v" data-hours></p>
+          </div>
+        </div>
+        <a class="btn btn--amber reveal" href="#carte">Voir la carte complète</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-theme="dark">
+    <div class="wrap footer__row">
+      <span class="nav__logo nav__logo--lg"><img src="assets/img/logo-bmc-food.png" alt="BMC Food"></span>
+      <p class="footer__note" data-footnote></p>
+      <p class="footer__copy">© <span data-year></span> BMC Food · Dakar</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <style>.loader{display:none}.flight{height:auto}</style>
+    <p class="noscript">Activez JavaScript pour la visite animée. La carte BMC Food : tacos mixte, viande, poulet et Giga, à Cité Mixta, IDA (Point E), Dakar.</p>
+  </noscript>
+
+  <script src="assets/js/content.js"></script>
+  <script src="frames/manifest.js"></script>
+  <script src="assets/js/flight.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

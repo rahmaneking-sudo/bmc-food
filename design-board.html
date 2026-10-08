@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMC Food Maquette</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body::after { display: none; }
+    .board { padding: 48px var(--gutter) 80px; max-width: 1360px; margin: 0 auto; }
+    .board h1 { font-weight: 800; font-variation-settings: "wdth" 70; font-size: clamp(40px, 6vw, 84px); line-height: .9; text-transform: uppercase; margin: 0 0 8px; }
+    .board h1 em { color: var(--amber); text-transform: none; }
+    .board > p { color: var(--muted); margin: 0 0 40px; max-width: 60ch; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; background: var(--ink-2); min-width: 0; }
+    .card h2 { margin: 0 0 18px; font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--amber); }
+    .s4 { grid-column: span 4; } .s5 { grid-column: span 5; } .s7 { grid-column: span 7; } .s8 { grid-column: span 8; } .s12 { grid-column: span 12; }
+    .logo-tile { width: 150px; padding: 14px; border-radius: 24px; background: #fff; }
+    .note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+    .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .sw { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+    .sw b { display: block; height: 70px; }
+    .sw span { display: block; padding: 8px 10px; font-size: 12px; }
+    .type-d { font-weight: 800; font-variation-settings: "wdth" 70; font-size: 64px; line-height: .9; text-transform: uppercase; margin: 0 0 6px; }
+    .type-d em { color: var(--amber); text-transform: none; }
+    .type-s { font-family: var(--serif); font-style: italic; font-size: 30px; margin: 0 0 10px; }
+    .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .light { background: var(--cream); color: var(--ink); border-color: var(--ink-line); }
+    .light h2 { color: var(--amber-lo); }
+    .cue { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; margin-bottom: 14px; font-size: 14px; color: var(--muted); }
+    .cue i { font-style: normal; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(246,165,30,.55); color: var(--amber); font-size: 11px; }
+    .mini-stage { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 9; }
+    .mini-stage img { width: 100%; height: 100%; object-fit: cover; }
+    .mini-stage .chapter { bottom: 18px; left: 18px; width: 70%; }
+    .mini-stage .chapter__title { font-size: 34px; margin-bottom: 8px; }
+    .mini-stage .chapter__text { font-size: 12px; margin-bottom: 10px; }
+    .mini-stage .chapter__eyebrow { margin-bottom: 8px; font-size: 9px; }
+    @media (max-width: 900px) { .s4, .s5, .s7, .s8 { grid-column: span 12; } .swatches { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <h1>BMC Food, <em>Nuit dorée</em></h1>
+    <p>Maquette de conception du site : logo officiel conservé tel quel, palette tirée du menu (noir et ambre), typographie de titres condensée et accents en italique éditorial.</p>
+
+    <div class="grid">
+      <section class="card s4">
+        <h2>Logo officiel</h2>
+        <div class="logo-tile"><img src="assets/img/logo-bmc-food.png" alt="Logo BMC Food"></div>
+        <p class="note">Repris du menu, non redessiné. Toujours posé sur une tuile blanche arrondie. À remplacer par le fichier HD (PNG ou SVG) du client.</p>
+      </section>
+
+      <section class="card s8">
+        <h2>Palette</h2>
+        <div class="swatches">
+          <div class="sw"><b style="background:#0b0a08"></b><span>Encre · #0B0A08</span></div>
+          <div class="sw"><b style="background:#f6a51e"></b><span>Ambre · #F6A51E</span></div>
+          <div class="sw"><b style="background:#f4ebdd"></b><span style="color:var(--text)">Crème · #F4EBDD</span></div>
+          <div class="sw"><b style="background:#14120e"></b><span>Encre 2 · #14120E</span></div>
+          <div class="sw"><b style="background:#c97c08"></b><span>Ambre profond · #C97C08</span></div>
+          <div class="sw"><b style="background:#0d1322"></b><span>Crépuscule · #0D1322</span></div>
+        </div>
+      </section>
+
+      <section class="card s7">
+        <h2>Typographie</h2>
+        <p class="type-d">Pressé. Grillé. <em>Gratiné.</em></p>
+        <p class="type-s">Instrument Serif italique, pour l'accent</p>
+        <p style="margin:0;color:var(--muted)">Archivo (axe largeur 62–125, graisse 300–900) pour les titres condensés et le texte courant. Titres en capitales, interlignage serré (0,88) ; texte courant 16–19 px, interlignage 1,55.</p>
+      </section>
+
+      <section class="card s5">
+        <h2>Boutons et liens</h2>
+        <div class="row">
+          <a class="btn btn--amber" href="#">Voir la carte<span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn" href="#">Passer la visite</a>
+        </div>
+        <div class="row" style="margin-top:18px">
+          <a class="btn btn--amber btn--sm" href="#">Voir la carte</a>
+          <nav class="nav__links" style="display:flex;gap:22px"><a href="#">La visite</a><a href="#">La carte</a></nav>
+        </div>
+        <p class="note">Survol : le fond encre monte depuis le bas, la flèche glisse de 5 px. Liens : soulignement qui se trace de gauche à droite.</p>
+      </section>
+
+      <section class="card s5 light">
+        <h2>Composant de la carte</h2>
+        <section class="cat" style="opacity:1;transform:none">
+          <header class="cat__head"><h3 class="cat__name">Giga tacos</h3><p class="cat__note">Pour les grandes faims ou à partager.</p></header>
+          <ul class="cat__list">
+            <li class="item"><span class="item__name">Tacos mixte XL<span class="pill pill--xl">XL</span></span><span class="item__dots"></span><span class="item__price">6 000 F</span></li>
+            <li class="item"><span class="item__name">Tacos poulet gratiné<span class="pill pill--gratine">Gratiné</span></span><span class="item__dots"></span><span class="item__price">3 500 F</span></li>
+            <li class="item"><span class="item__name">Tacos giga mixte<span class="pill pill--giga">Giga</span></span><span class="item__dots"></span><span class="item__price">15 000 F</span></li>
+          </ul>
+        </section>
+        <div class="chips" style="margin-top:18px"><button class="chip is-on">Tout</button><button class="chip">Gratinés</button></div>
+      </section>
+
+      <section class="card s7">
+        <h2>Chapitre sur la scène du vol</h2>
+        <div class="mini-stage">
+          <img src="assets/img/poster-01.webp" alt="">
+          <div class="flight__shade"></div>
+          <article class="chapter chapter--left"><p class="chapter__eyebrow"><span class="chapter__index">01</span>Cité Mixta, Point E</p><h3 class="chapter__title">Le tacos, version <em>Dakar</em>.</h3><p class="chapter__text">Pressé à la plancha, gratiné à la minute.</p></article>
+        </div>
+      </section>
+
+      <section class="card s12">
+        <h2>Indications visuelles</h2>
+        <div class="grid" style="gap:8px 32px">
+          <div class="s4"><div class="cue"><i>01</i><span>Le texte vit dans le tiers gauche ou droit : la caméra garde l'action au centre, jamais aux extrémités.</span></div></div>
+          <div class="s4"><div class="cue"><i>02</i><span>Images : nuit chaude, lumière ambrée intérieure contre crépuscule bleu extérieur. Aucune enseigne ni texte généré.</span></div></div>
+          <div class="s4"><div class="cue"><i>03</i><span>Grain photo à 6 %, vignettage doux, ombre portée du texte pour la lisibilité sur l'image.</span></div></div>
+          <div class="s4"><div class="cue"><i>04</i><span>Section claire unique : la carte (fond crème). L'en-tête bascule automatiquement en encre.</span></div></div>
+          <div class="s4"><div class="cue"><i>05</i><span>Mouvement : courbes « ease-out » (0,22, 1, 0,36, 1), apparitions de 1 s, défilement natif non détourné.</span></div></div>
+          <div class="s4"><div class="cue"><i>06</i><span>Interdits du projet : pas de WhatsApp, pas de commande ni de paiement, pas de connexion, pas de carte géographique.</span></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
